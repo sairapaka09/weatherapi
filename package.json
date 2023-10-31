@@ -1,0 +1,29 @@
+{
+  "name": "weatherserviceapi",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "start": "node index.js weatherapi.js",
+    "test": "mocha 'unittest.js'"
+  },
+  "author": "Sai Rapaka",
+  "license": "ISC",
+  "dependencies": {
+    "body-parser": "^1.20.2",
+    "dotenv": "^16.3.1",
+    "ejs": "^3.1.9",
+    "express": "^4.18.2",
+    "http-codes": "^1.0.0",
+    "nock": "^13.3.7",
+    "node-fetch": "^2.7.0",
+    "request": "^2.88.2",
+    "swagger-jsdoc": "^6.2.8",
+    "swagger-ui-express": "^5.0.0"
+  },
+  "devDependencies": {
+    "chai": "^4.3.7",
+    "mocha": "^10.2.0",
+    "sinon": "^15.0.1"
+  }
+}
