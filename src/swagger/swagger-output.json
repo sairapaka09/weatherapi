@@ -1,0 +1,173 @@
+{
+  "swagger": "2.0",
+  "info": {
+    "title": "Weather API",
+    "description": "",
+    "version": "1.0.0"
+  },
+  "host": "localhost:3000",
+  "basePath": "/",
+  "schemes": [
+    "http"
+  ],
+  "paths": {
+    "/getweatherdata": {
+      "get": {
+        "description": "",
+        "parameters": [
+          {
+            "name": "lat",
+            "in": "query",
+            "description": "latitude",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "name": "long",
+            "in": "query",
+            "description": "longitude",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "name": "filter",
+            "in": "query",
+            "description": "filter",
+            "required": false,
+            "type": "string"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Success",
+            "schema": {
+              "type": "object",
+              "properties": {
+                "success": {
+                  "type": "string",
+                  "example": "true"
+                },
+                "data": {
+                  "type": "object",
+                  "properties": {
+                    "coordinatesLocation": {
+                      "type": "string",
+                      "example": "DFW, TX"
+                    },
+                    "currentWeatherState": {
+                      "type": "string",
+                      "example": "Rainy"
+                    },
+                    "timeZone": {
+                      "type": "string",
+                      "example": "EST/GMT"
+                    },
+                    "temperature": {
+                      "type": "string",
+                      "example": "15.6"
+                    },
+                    "feelsLike": {
+                      "type": "string",
+                      "example": "10"
+                    },
+                    "humidity": {
+                      "type": "string",
+                      "example": "100"
+                    },
+                    "isWindy": {
+                      "type": "string",
+                      "example": "yes"
+                    },
+                    "visibilityCondition": {
+                      "type": "string",
+                      "example": "clear"
+                    }
+                  },
+                  "required": [
+                    "coordinatesLocation",
+                    "currentWeatherState",
+                    "timeZone",
+                    "temperature",
+                    "feelsLike",
+                    "humidity",
+                    "isWindy",
+                    "visibilityCondition"
+                  ]
+                }
+              },
+              "required": [
+                "success",
+                "data"
+              ],
+              "xml": {
+                "name": "main"
+              }
+            }
+          },
+          "400": {
+            "schema": {
+              "type": "object",
+              "properties": {
+                "success": {
+                  "type": "string",
+                  "example": "false"
+                },
+                "errors": {
+                  "type": "array",
+                  "items": {
+                    "type": "object",
+                    "properties": {
+                      "message": {
+                        "type": "string",
+                        "example": "Invalid latitude value"
+                      },
+                      "statusCode": {
+                        "type": "string",
+                        "example": "400"
+                      }
+                    },
+                    "required": [
+                      "message",
+                      "statusCode"
+                    ]
+                  }
+                }
+              },
+              "required": [
+                "success",
+                "errors"
+              ],
+              "xml": {
+                "name": "main"
+              }
+            },
+            "description": "Invalid data"
+          },
+          "500": {
+            "schema": {
+              "type": "object",
+              "properties": {
+                "success": {
+                  "type": "string",
+                  "example": "false"
+                },
+                "error": {
+                  "type": "string",
+                  "example": "Unable to get data from thirdparty api."
+                }
+              },
+              "required": [
+                "success",
+                "error"
+              ],
+              "xml": {
+                "name": "main"
+              }
+            },
+            "description": "Server error."
+          }
+        }
+      }
+    }
+  }
+}

@@ -4,25 +4,31 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "start": "node index.js weatherapi.js",
-    "test": "mocha 'unittest.js'"
+    "start": "node src\\index.js",
+    "test": "mocha 'tests\\unit\\weathercontroller.js'",
+    "swagger": "node src\\swagger\\swagger.js"
   },
   "author": "Sai Rapaka",
   "license": "ISC",
   "dependencies": {
     "body-parser": "^1.20.2",
+    "chai-http": "^4.4.0",
     "dotenv": "^16.3.1",
     "ejs": "^3.1.9",
+    "eslint": "^8.53.0",
     "express": "^4.18.2",
+    "express-validator": "^7.0.1",
     "http-codes": "^1.0.0",
+    "jsonwebtoken": "^9.0.2",
     "nock": "^13.3.7",
     "node-fetch": "^2.7.0",
     "request": "^2.88.2",
+    "swagger-autogen": "^2.23.7",
     "swagger-jsdoc": "^6.2.8",
     "swagger-ui-express": "^5.0.0"
   },
   "devDependencies": {
-    "chai": "^4.3.7",
+    "chai": "^4.3.10",
     "mocha": "^10.2.0",
     "sinon": "^15.0.1"
   }
