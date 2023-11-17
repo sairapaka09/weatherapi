@@ -11,8 +11,8 @@ const mockResData = require('./data');
 
 let sandbox;
 const url = 'https://api.openweathermap.org';
-const validFilter = '/data/3.0/onecall?lat=33.0866&lon=-97.2958&exclude=hourly,daily,minutely&appid=61782f5a135cbb22a767f4eec8442e9b&units=metric';
-const invalidFilter = '/data/3.0/onecall?lat=1&lon=1&exclude=hourly,daily,minutely&appid=61782f5a135cbb22a767f4eec8442e9b&units=metric';
+const validFilter = '/data/3.0/onecall?lat=33.0866&lon=-97.2958&exclude=hourly,daily,minutely&appid=${appId}&units=metric';
+const invalidFilter = '/data/3.0/onecall?lat=1&lon=1&exclude=hourly,daily,minutely&appid=${appId}&units=metric';
 
 describe(moduleName, () => {
     beforeEach((done) => {
