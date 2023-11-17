@@ -30,10 +30,10 @@ describe(moduleName, () => {
                 query: {}
             };
             nock('https://api.openweathermap.org').
-                get('/data/3.0/onecall?lat=33.0866&lon=-97.2958&exclude=hourly,daily,minutely&appid=61782f5a135cbb22a767f4eec8442e9b&units=metric')
+                get('/data/3.0/onecall?lat=33.0866&lon=-97.2958&exclude=hourly,daily,minutely&appid=${appId}&units=metric')
                 .reply(httpCodes.OK, mockResData.response);
             nock('https://api.openweathermap.org').
-                get('/data/3.0/onecall?lat=1&lon=1&exclude=hourly,daily,minutely&appid=61782f5a135cbb22a767f4eec8442e9b&units=metric')
+                get('/data/3.0/onecall?lat=1&lon=1&exclude=hourly,daily,minutely&appid=${appId}&units=metric')
                 .reply(httpCodes.INTERNAL_SERVER_ERROR, {});
 
         });
