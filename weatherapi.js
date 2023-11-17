@@ -36,7 +36,7 @@ module.exports.getCurrentWeather = async (req, res) => {
         data: {}
       }));
     } else {
-      const url = `https://api.openweathermap.org/data/3.0/onecall?lat=${latitude}&lon=${longitude}&exclude=hourly,daily,minutely&appid=61782f5a135cbb22a767f4eec8442e9b&units=metric`
+      const url = `https://api.openweathermap.org/data/3.0/onecall?lat=${latitude}&lon=${longitude}&exclude=hourly,daily,minutely&appid=${appId}&units=metric`
       const response = await fetch(url);
       const data = await response.json();
       const currentState = data.current.weather[0].main
